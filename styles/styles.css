@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,300&family=Montserrat:wght@300&display=swap');
+
+:root {
+    --main-color: green;
+    --main-font: 'Bricolage Grotesque', sans-serif;
+    --bold-weight: 700;
+    --medium-weight: 300;
+    --thin-weight: 100;
+}
+
+#todoTitle {
+    text-align: center;
+}
+
+#listContainer {
+    font-family: var(--main-font);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 0.5px solid rgb(217, 210, 210);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0px 10px 10px rgb(217, 210, 210);
+}
+
+#editForm {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 200px;
+    width: 200px;
+    background-color: white;
+    border: 1px solid black;
+    z-index: 1000;
+}
+
+#modalContainer {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    border: 1px solid black;
+    z-index: 999;
+    background-color: rgba(140, 140, 140, 0.75);
+}
+
+#inputContainer {
+    display: flex;
+    flex-direction: column;
+    width: 24vw;
+    margin: 8px;
+    border-top: 1px solid rgb(217, 210, 210);
+
+    padding: 8px;
+}
+
+
+#inputContainer input, textarea{
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid rgb(119, 119, 119);
+    font-weight: var(--medium-weight);
+    color: rgb(100, 100, 100);
+    cursor: pointer;
+}
+
+#inputContainer textarea{
+    resize: vertical;
+}
+
+
+#inputContainer button{
+    width: fit-content;
+    margin: 16px;
+    align-self: center;
+
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.itemContainer {
+    border-top: 0.5px solid rgba(140, 140, 140, 0.75);
+    border-bottom: 0.5px solid rgba(140, 140, 140, 0.75);
+    margin: 32px;
+}
+
+.itemContainer button{
+    width: fit-content;
+    margin: 8px;
+    align-self: center;
+
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+}
