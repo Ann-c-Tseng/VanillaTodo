@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo</title>
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
     <div id="listContainer">
@@ -15,9 +16,9 @@
             <h4 class="subheader">When to get this done:</h3>
             <input type="date" id="itemDate"></input>
             <h4 class="subheader">The details:</h3>
-            <textarea rows="4" id="itemContent" placeholder="Write your content here :)"></textarea>
+            <input id="itemContent" placeholder="Write your content here :)"></input>
             <button id="itemSubmitBtn" onclick="addItem()">Add Item</button>
-        </div> 
+        </div>
         <div id="itemsContainer"></div>
     </div>
 </body>

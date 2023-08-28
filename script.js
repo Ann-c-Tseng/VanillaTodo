@@ -4,6 +4,7 @@ JSON.parse(localStorage.getItem('items')) : [];
 
 window.onload = function() {
     if(itemsArray.length > 0) {
+        console.log(itemsArray);
         itemsArray.forEach(item => {
             var itemDiv = document.createElement("div");
             itemDiv.className = "itemContainer";

@@ -8,19 +8,30 @@
     --thin-weight: 100;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    margin: 64px;
+}
+
 #todoTitle {
     text-align: center;
 }
 
 #listContainer {
     font-family: var(--main-font);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: sticky;
+    width: fit-content;
+
+    display: flex;
+    flex-direction: column;
+
     border: 0.5px solid rgb(217, 210, 210);
     border-radius: 4px 4px 4px 4px;
     box-shadow: 0px 10px 10px rgb(217, 210, 210);
+    background-color: white;
+
+
 }
 
 #editForm {
@@ -42,9 +53,9 @@
     right: 0px;
     bottom: 0px;
     left: 0px;
-    border: 1px solid black;
+    height: 100vh;
     z-index: 999;
-    background-color: rgba(140, 140, 140, 0.75);
+    background-color: rgba(140, 140, 140, 0.50);
 }
 
 #inputContainer {
@@ -55,20 +66,17 @@
     border-top: 1px solid rgb(217, 210, 210);
 
     padding: 8px;
+    border-bottom: 0.5px solid rgba(140, 140, 140, 0.75);
 }
 
 
-#inputContainer input, textarea{
+#inputContainer input{
     padding: 8px;
     border-radius: 4px;
     border: 1px solid rgb(119, 119, 119);
     font-weight: var(--medium-weight);
     color: rgb(100, 100, 100);
     cursor: pointer;
-}
-
-#inputContainer textarea{
-    resize: vertical;
 }
 
 
@@ -83,7 +91,6 @@
 }
 
 .itemContainer {
-    border-top: 0.5px solid rgba(140, 140, 140, 0.75);
     border-bottom: 0.5px solid rgba(140, 140, 140, 0.75);
     margin: 32px;
 }

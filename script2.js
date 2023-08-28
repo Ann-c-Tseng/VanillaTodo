@@ -60,12 +60,16 @@ function createModal(idx) {
 
         //Remove modal display
         document.getElementById("modalContainer").remove();
+
+        //Enable scroll again
+        enableScroll();
     })
     m.appendChild(saveBtn);
 
     modalC.appendChild(m);
 
     document.body.appendChild(modalC);
+    disableScroll();
 }
 
 function getValues(idx) {
@@ -96,4 +100,16 @@ function updateItem(idx) {
     elementContainer.getElementsByClassName("itemTitle")[0].innerHTML = s.title;
     elementContainer.getElementsByClassName("itemDate")[0].innerHTML = s.date;
     elementContainer.getElementsByClassName("itemContent")[0].innerHTML = s.content;
+}
+
+function disableScroll() {
+    // if user scrolling is attempted, set this to the previous value
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.onscroll = function() {
+        window.scrollTo(0, 0);
+    };
+}
+
+function enableScroll() {
+    window.onscroll = function () {};
 }
