@@ -103,10 +103,14 @@ function updateItem(idx) {
 }
 
 function disableScroll() {
+    var yVal = window.scrollY
     // if user scrolling is attempted, set this to the previous value
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    console.log(yVal);
+    window.scrollTo({top: yVal})
     window.onscroll = function() {
-        window.scrollTo(0, 0);
+        // window.scrollTo(window.scrollX, window.scrollY);
+        console.log(yVal)
+        window.scrollTo(0, yVal);
     };
 }
 
