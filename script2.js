@@ -14,6 +14,15 @@ function createModal(idx) {
     var m = document.createElement("div");
     m.id = "editForm";
 
+    var mInput = document.createElement("div")
+    mInput.id = "editFormInputDiv";
+
+    var mButton = document.createElement("div")
+    mButton.id = "editFormBtnDiv"
+
+    m.appendChild(mInput);
+    m.appendChild(mButton);
+
     var it = document.createElement("input");
     it.type = "text";
     it.id = "itemTitle";
@@ -22,7 +31,7 @@ function createModal(idx) {
     it.addEventListener("keyup", () =>{
         itChange = it.value;
     })
-    m.appendChild(it);
+    mInput.appendChild(it);
 
     var id = document.createElement("input");
     id.type = "date";
@@ -32,7 +41,7 @@ function createModal(idx) {
     id.addEventListener("change", () => {
         idChange = id.value;
     })
-    m.appendChild(id);
+    mInput.appendChild(id);
 
     var ic = document.createElement("input");
     ic.type = "text";
@@ -42,7 +51,7 @@ function createModal(idx) {
     ic.addEventListener("keyup", () => {
         icChange = ic.value;
     })
-    m.appendChild(ic);
+    mInput.appendChild(ic);
 
     var saveBtn = document.createElement("button");
     saveBtn.id = "saveBtn";
@@ -64,11 +73,12 @@ function createModal(idx) {
         //Enable scroll again
         enableScroll();
     })
-    m.appendChild(saveBtn);
+    mButton.appendChild(saveBtn);
 
     modalC.appendChild(m);
 
     document.body.appendChild(modalC);
+
     disableScroll();
 }
 
@@ -109,9 +119,13 @@ function disableScroll() {
     window.scrollTo({top: yVal})
     window.onscroll = function() {
         // window.scrollTo(window.scrollX, window.scrollY);
-        console.log(yVal)
         window.scrollTo(0, yVal);
     };
+
+    //Set modal new top value to be based on yVal vertical scroll value
+    if(document.getElementById("modalContainer") !== null) {
+        document.getElementById("modalContainer").style.top = yVal + 'px';
+    }
 }
 
 function enableScroll() {
